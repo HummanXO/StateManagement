@@ -11,7 +11,18 @@ import SwiftUI
 struct StateManagementApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                ToDoItemsListView()
+                    .tabItem {
+                        Image(systemName: "list.bullet")
+                        Text("To-Do Items")
+                    }
+                AboutView()
+                    .tabItem {
+                        Image(systemName: "questionmark.circle.fill")
+                        Text("About")
+                    }
+            }
         }
     }
 }
